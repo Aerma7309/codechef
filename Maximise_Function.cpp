@@ -20,10 +20,9 @@ void solve()
     vector<int> v(n);
     for (auto &i : v)
         cin >> i;
-    sort(v.begin(), v.end());
-    for (int i = 1; i < n - 1; i++)
-        ans = max(ans, abs(v[0] - v[i]) + abs(v[i] - v[n - 1]) + abs(v[n - 1] - v[0]));
-    cout << ans << '\n';
+    int mx = *max_element(v.begin(), v.end());
+    int mn = *min_element(v.begin(), v.end());
+    cout << 2 * (mx - mn) << '\n';
 }
 
 signed main()
